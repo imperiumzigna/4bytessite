@@ -3,7 +3,7 @@ var myCenter = new google.maps.LatLng(-2.574029,-44.219404);
 function initialize() {
     var mapProp = {
         center:myCenter,
-        zoom:15,
+        zoom:17,
         scrollwheel:true,
         draggable:true,
         mapTypeId:google.maps.MapTypeId.ROADMAP
@@ -52,5 +52,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 }
             });
         });
+
     })
 

@@ -1,9 +1,38 @@
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
   color: #818181;
 
 }
+
+
+#text-flut {
+  position: absolute;
+  top: 74%;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-size:1.6em;
+
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  animation-duration:2s;
+
+}
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -18,6 +47,23 @@ h4 {
   font-weight: 400;
   margin-bottom: 30px;
 }
+#teste{
+    width: 100%;
+    height: 40%;
+    min-height: 600px;
+    background-color: #2b669a;
+}
+
+
+.image {
+    position: relative;
+
+
+}
+#jumboID{
+  padding-bottom: 10px;!important;
+}
+
 .jumbotron {
   background-color: #2b669a;
   color: #fff;
@@ -25,6 +71,8 @@ h4 {
   font-family: Montserrat, sans-serif;
   padding-left: 0px;
   padding-right: 0px;
+  height: 65%;
+  width: 100%;
 
 }
 .container-fluid {
@@ -38,10 +86,9 @@ h4 {
   font-size: 50px;
 }
 #background-jumbo{
+position: relative;
 
-  width: 100%;
-  height: 5%;
-  background-color: #2b669a;
+
 }
 
 .logo {
@@ -184,9 +231,7 @@ footer .glyphicon {
     margin-bottom: 35px;
   }
 }
-@media screen and (max-width: 480px) {
-  .logo {
-    font-size: 150px;
-  }
-}
 
+@media only screen and (max-width: 480px) {
+#text-flut{font-size: 75%;}
+}
