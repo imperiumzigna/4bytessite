@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mailer = require('express-mailer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -31,6 +31,23 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// Contact Email
+app.get('/',function(req,res,next){
+  app.mailer.send('email',{
+    to:'4bytes.ej@gmail.com',
+    subject: 'teste',
+    otherProperty:'Other Property'
+  },function(err){
+    if(err){
+      console.log(err);
+      res.send('Erro ao enviar email');
+    return;
+    }
+    res.send('Email Enviado');
+  })
+})
+
 
 // error handlers
 
